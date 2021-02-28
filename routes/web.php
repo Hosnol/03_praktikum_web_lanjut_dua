@@ -17,4 +17,12 @@ use App\Http\Controllers\AwalController;
 //     return view('welcome');
 // });
 
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/', [AwalController::class, 'index']);
+Route::get('/about-us', [AwalController::class, 'about']);
+Route::get('/blog', [AwalController::class, 'blog']);
+Route::get('/post-details', [AwalController::class, 'post']);
+Route::get('/contact-us', [AwalController::class, 'contact']);
