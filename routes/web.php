@@ -20,6 +20,16 @@ use App\Http\Controllers\AwalController;
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/test-koneksi-database', function() {
+	try {
+		\DB::connection()->getPdo();
+
+		echo 'Sudah terkoneksi dengan database: ' . \DB::connection()->getDatabaseName();
+
+	} catch (\Exception $e) {
+		echo 'Belum terkoneksi database, error: ' . $e->getMessage();
+	}
+});
 
 Route::get('/', [AwalController::class, 'index']);
 Route::get('/about-us', [AwalController::class, 'about']);

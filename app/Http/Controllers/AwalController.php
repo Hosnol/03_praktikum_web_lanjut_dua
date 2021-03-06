@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AwalController extends Controller
 {
@@ -15,7 +17,8 @@ class AwalController extends Controller
     }
 
     public function blog(){
-        return view('blog');
+        //$content = DB::table('contents')->first();
+        return view('blog',['content'=> Content::index()]);
     }
 
     public function post(){
